@@ -3,6 +3,8 @@ intents:
   - how_to_get_funding_for_kids_vacation
   - how_much_funding_will_i_get_for_kids_vacation
   - what_types_of_benefits_are_available
+  - how_can_i_change_my_personal_data
+  - what_sport_programs_are_available
   - what_types_of_social_benefits_are_available
   - goodbye
   - thanks
@@ -15,6 +17,8 @@ actions:
 - utter_greet
 - utter_how_to_get_funding_for_kids_vacation
 - utter_how_much_funding_will_i_get_for_kids_vacation
+- utter_how_can_i_change_my_personal_data
+- utter_what_sport_programs_are_available
 - utter_what_types_of_social_benefits_are_available
 - utter_what_types_of_benefits_are_available
 - utter_thanks
@@ -44,6 +48,18 @@ templates:
 
   utter_what_types_of_benefits_are_available:
   - text: "Szczegółową informację o rodzajach benefitów znajdziesz w Intranecie."
+
+  utter_what_sport_programs_are_available:
+  - text: "Pracodawca oferuje możliwosć skorzystania z oferty trzech operatorów sportowych. Poniższej linki do szczegółowej oferty:
+           1. AAA
+           2. BBB
+           3. CCC"
+
+  utter_how_can_i_change_my_personal_data:
+  - text: "Pracodawca oferuje możliwosć skorzystania z oferty trzech operatorów sportowych. Poniższej linki do szczegółowej oferty:
+           1. AAA
+           2. BBB
+           3. CCC"
 
   utter_thanks:
   - text: "Nie ma za co :) Czy masz jeszcze jakieś pytania do mnie?"

@@ -27,6 +27,18 @@
   - utter_what_types_of_benefits_are_available
 > check_asked_question
 
+## happy path - how_can_i_change_my_personal_data
+> check_asked_question
+* how_can_i_change_my_personal_data
+  - utter_how_can_i_change_my_personal_data
+> check_asked_question
+
+## happy path - what_sport_programs_are_available
+> check_asked_question
+* what_sport_programs_are_available
+  - utter_what_sport_programs_are_available
+> check_asked_question
+
 ## thanks
 > check_asked_question
 * thanks

@@ -20,6 +20,19 @@
 - jakie są benefity?
 - benefity
 
+## intent:what_sport_programs_are_available
+- z jakich programów sportowych mogę korzystać?
+- jakie programy sportowe są dostępne?
+- programy sportowe
+
+## intent:how_can_i_change_my_personal_data
+- jak mogę zmienić swoje dane osobowe?
+- jak mam zgłosić zmianę danych osobowych?
+- zmiana danych osobowych
+- dane osobowe
+- gdzie mogę zgłosić zmianę danych osobowych
+- jak zgłosić zmianę danych osobowych
+
 ## intent:goodbye
 - żegnam
 - do widzenia
