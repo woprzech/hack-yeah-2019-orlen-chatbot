@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {Input} from "semantic-ui-react";
+import {Button, Input} from "semantic-ui-react";
+import "./InputControl.css"
 
-class MessageControl extends Component {
+class InputControl extends Component {
 
     constructor(props) {
         super(props);
@@ -11,14 +12,17 @@ class MessageControl extends Component {
     handleMessage = e => this.setState({text: e.target.value});
 
     sendMessage = () => {
-        this.props.onButtonClick(this.state.text);
-        this.setState({text: ""});
-        console.log(this.state.text)
+        if (this.state.text !== "") {
+            this.props.onButtonClick(this.state.text);
+            this.setState({text: ""});
+        }
     };
 
     handleKeyDown = e => {
         if (e.key === 'Enter') {
-            this.sendMessage()
+            if (this.state.text !== "") {
+                this.sendMessage()
+            }
         }
     };
 
@@ -26,10 +30,11 @@ class MessageControl extends Component {
         return (
             <div>
                 <Input focus
-                       action={{
-                           content: 'Ask!',
-                           onClick: () => this.sendMessage()
-                       }}
+                       action={
+                           <Button content='Ask!'
+                                   onClick={this.sendMessage}
+                                   disabled={this.state.text === ""}/>
+                       }
                        onKeyDown={this.handleKeyDown}
                        placeholder='Any question ?'
                        onChange={this.handleMessage}
@@ -39,5 +44,5 @@ class MessageControl extends Component {
     }
 }
 
-export default MessageControl;
+export default InputControl;
 

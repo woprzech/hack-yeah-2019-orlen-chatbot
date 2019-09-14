@@ -1,17 +1,16 @@
 import React from "react";
-import {Header, Segment} from "semantic-ui-react";
+import {Container, Image, Menu} from "semantic-ui-react";
 import Logo from "../../logo_orlen.jpg"
 
 function MyHeader() {
     return (
-        <Segment clearing>
-            <Header as='h2' floated='right'>
-                <img src={Logo} alt="Orlen"/>
-            </Header>
-            <Header as='h2' floated='left'>
-                // todo
-            </Header>
-        </Segment>
+        <div>
+            <Container>
+                {/*<Menu.Menu position='right'>*/}
+                    <Image size='tiny' src={Logo} style={{marginRight: '1.5em'}}/>
+                {/*</Menu.Menu>*/}
+            </Container>
+        </div>
     );
 }
 
