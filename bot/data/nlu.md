@@ -1,6 +1,23 @@
-## intent:jak_dostac_finansowanie
+## intent:greet
+- cześć
+- dzień dobry
+
+## intent:how_to_get_funding_for_kids_vacation
 - Jak uzyskać dofinansowanie do wypoczynku dzieci?
 - Jak dostać dofinansowanie do wypoczynku dzieci?
+
+## intent:how_much_funding_will_i_get_for_kids_vacation
+- ile dostanę dofinansowania do wypoczynku dzieci?
+- na ile dofinansowania mogę liczyć do wypoczynku dzieci?
+
+## intent:what_types_of_social_benefits_are_available
+- jakie są rodzaje świadczeń socjalnych?
+- świadczenia socjalne
+
+## intent:what_types_of_benefits_are_available
+- jakie są rodzaje benefitów?
+- jakie są benefity?
+- benefity
 
 ## intent:goodbye
 - żegnam
@@ -20,25 +37,3 @@
 - don't like that
 - no way
 - not really
-
-## intent:mood_great
-- perfect
-- very good
-- great
-- amazing
-- wonderful
-- I am feeling very good
-- I am great
-- I'm good
-
-## intent:mood_unhappy
-- sad
-- very sad
-- unhappy
-- bad
-- very bad
-- awful
-- terrible
-- not very good
-- extremely sad
-- so sad

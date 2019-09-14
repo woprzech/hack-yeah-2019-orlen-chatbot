@@ -1,31 +1,54 @@
 intents:
   - greet
+  - how_to_get_funding_for_kids_vacation
+  - how_much_funding_will_i_get_for_kids_vacation
+  - what_types_of_benefits_are_available
+  - what_types_of_social_benefits_are_available
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
+#  - mood_great
+#  - mood_unhappy
 
 actions:
 - utter_greet
-- utter_cheer_up
-- utter_did_that_help
-- utter_happy
-- utter_goodbye
+- utter_how_to_get_funding_for_kids_vacation
+- utter_how_much_funding_will_i_get_for_kids_vacation
+- utter_what_types_of_social_benefits_are_available
+- utter_what_types_of_benefits_are_available
+#- utter_did_that_help
+#- utter_happy
+#- utter_goodbye
 
 templates:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Cześć! Pytaj, a ja odpowiem :)"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_how_to_get_funding_for_kids_vacation:
+  - text: "Aby otrzymać dofinansowanie należy wystawić wniosek w systemie WorkFlow."
+#    buttons : ["nie wiem", "nie wiem 1"]
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  what_types_of_social_benefits_are_available:
+  - text: "Poniżej przedstawiam rodzaje świadczeń socjalnych:
+           Dofinansowanie do wypoczynku pracownika,
+           Dofinansowanie do opieki nad dzieckiem,
+           Dofinansowanie do wypoczynku dzieci i młodzieży.
+           Szczegółowe informacje znajdziesz Regulaminie Świadczeń Socjalnych znajdującycm się w Intranecie.
+"
 
-  utter_happy:
-  - text: "Great carry on!"
+  utter_how_much_funding_will_i_get_for_kids_vacation:
+  - text: "Poniżej przedstawiam kwoty dofinansowania do wypoczynku dzieci w zależności od progu dochodu na członka rodziny: Próg                      Kwota dofinansowania do 1000                300 1001-2000           200 pow. 2000           100 Szczegółowe informacje znajdziesz Regulaminie Świadczeń Socjalnych znajdującycm się w Intranecie."
 
-  utter_goodbye:
-  - text: "Bye"
+  utter_what_types_of_benefits_are_available:
+  - text: "Szczegółową informację o rodzajach benefitów znajdziesz w Intranecie."
+
+#    image: "https://i.imgur.com/nGF1K8f.jpg"
+#
+#  utter_did_that_help:
+#  - text: "Did that help you?"
+#
+#  utter_happy:
+#  - text: "Great carry on!"
+#
+#  utter_goodbye:
+#  - text: "Bye"
