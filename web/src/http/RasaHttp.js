@@ -11,8 +11,8 @@ export default class RasaHttp {
             sender: this.sender
         })
             .then((response) => {
-                console.log("Response data: ", response.data);
-                return response.data
+                console.log("Response data: ", response.data[0].custom);
+                return response.data[0].custom
             })
             .catch((error) => {
                 console.log("Error: ", error);

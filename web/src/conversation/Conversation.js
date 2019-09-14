@@ -5,10 +5,14 @@ import InputControl from "./components/messagecontrol/InputControl";
 import uuid from "uuid"
 import './Conversation.css';
 import RasaHttp from "../http/RasaHttp"
-import ButtonedMessage from "./components/message/buttoned/ButtonedMessage";
+import ButtonedMessage, {
+    CALL_BUTTON_TYPE,
+    LINK_BUTTON_TYPE,
+    MESSAGE_BUTTON_TYPE
+} from "./components/message/buttoned/ButtonedMessage";
 import SingleMessage from "./components/message/single/SingleMessage";
 
-export const WORKER_NAME = "Patryk Super Pracownik";
+export const WORKER_NAME = "Robert Kubica";
 export const ACTOR_BOT = "BOT";
 export const ACTOR_MAN = "MAN";
 export const BOT_NAME = "Bot Orlen HR";
@@ -37,7 +41,7 @@ class Conversation extends Component {
                     text: "Nie mam pojęcia mordo, dźwoń! ",
                     actor: ACTOR_BOT,
                     buttons: [
-                        {text: "", redirectUrl: "http://wp.pl/", type: "CALL"},
+                        {text: "Zadzwoń!", redirectUrl: "http://wp.pl/", type: "CALL"},
                     ]
                 }
             ]
@@ -49,7 +53,9 @@ class Conversation extends Component {
     }
 
     renderMessage(message) {
-        return (<div key={uuid.v1()}>{!message.buttons ?
+        console.log(message);
+        return (<div key={uuid.v1()}>{
+            !message.buttons ?
                 <SingleMessage key={uuid.v1()}
                                text={message.text}
                                actor={message.actor}
@@ -58,19 +64,44 @@ class Conversation extends Component {
                                  text={message.text}
                                  actor={message.actor}
                                  name={message.name}
-                                 buttons={message.buttons}/>
+                                 buttons={message.buttons}
+                                 onRedirectButtonClick={(text, url, type) => {
+                                     if (type === LINK_BUTTON_TYPE) {
+                                         window.open(url, "_blank")
+                                     }
+                                     if (type === CALL_BUTTON_TYPE) {
+                                         console.log(CALL_BUTTON_TYPE)
+                                     }
+                                     if (type === MESSAGE_BUTTON_TYPE) {
+                                         this.renderMessage(text);
+                                         console.log("Asking about ", text)
+                                     }
+                                 }
+                                 }/>
 
             }</div>
         );
-
     }
+
+    renderAndAsk = (message) => {
+        this.setState({
+            messages: [...this.state.messages, {
+                name: WORKER_NAME,
+                text: message,
+                actor: ACTOR_MAN
+            }]
+        });
+
+        this.rasa.ask(message).then(data => this.handleResponse(data));
+    };
 
     handleResponse = data => {
         this.setState({
             messages: [...this.state.messages, ...data.map(it => ({
                 text: it.text,
                 actor: ACTOR_BOT,
-                name: BOT_NAME
+                name: BOT_NAME,
+                buttons: it.buttons
             }))]
         })
     };
@@ -87,18 +118,7 @@ class Conversation extends Component {
                         </Segment>
 
                         <Segment textAlign='right'>
-                            <InputControl onButtonClick={(message) => {
-                                this.setState({
-                                    messages: [...this.state.messages, {
-                                        name: WORKER_NAME,
-                                        text: message,
-                                        actor: ACTOR_MAN
-                                    }]
-                                });
-
-                                this.rasa.ask(message).then(data => this.handleResponse(data));
-
-                            }}/>
+                            <InputControl onButtonClick={(message) => this.renderAndAsk(message)}/>
                         </Segment>
 
                     </Segment.Group>
