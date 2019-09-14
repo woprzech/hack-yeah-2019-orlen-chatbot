@@ -5,6 +5,7 @@ intents:
   - what_types_of_benefits_are_available
   - what_types_of_social_benefits_are_available
   - goodbye
+  - thanks
   - affirm
   - deny
 #  - mood_great
@@ -16,6 +17,8 @@ actions:
 - utter_how_much_funding_will_i_get_for_kids_vacation
 - utter_what_types_of_social_benefits_are_available
 - utter_what_types_of_benefits_are_available
+- utter_thanks
+- utter_action_default_fallback
 #- utter_did_that_help
 #- utter_happy
 #- utter_goodbye
@@ -41,6 +44,12 @@ templates:
 
   utter_what_types_of_benefits_are_available:
   - text: "Szczegółową informację o rodzajach benefitów znajdziesz w Intranecie."
+
+  utter_thanks:
+  - text: "Nie ma za co :) Czy masz jeszcze jakieś pytania do mnie?"
+
+  utter_action_default_fallback:
+  - text: "Niestety nie zrozumiałam :( "
 
 #    image: "https://i.imgur.com/nGF1K8f.jpg"
 #

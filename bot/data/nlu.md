@@ -1,5 +1,6 @@
 ## intent:greet
 - cześć
+- Cześć
 - dzień dobry
 
 ## intent:how_to_get_funding_for_kids_vacation
@@ -22,6 +23,11 @@
 ## intent:goodbye
 - żegnam
 - do widzenia
+
+## intent:thanks
+- dzięki
+- Dziękuję
+- dobra robota
 
 ## intent:affirm
 - yes

@@ -26,3 +26,8 @@
 * what_types_of_benefits_are_available
   - utter_what_types_of_benefits_are_available
 > check_asked_question
+
+## thanks
+> check_asked_question
+* thanks
+  - utter_thanks
