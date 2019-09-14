@@ -29,7 +29,9 @@ class InputControl extends Component {
     render() {
         return (
             <div>
-                <Input focus
+                <Input fluid
+                       focus
+                       size='large'
                        action={
                            <Button animated
                                    onClick={this.sendMessage}

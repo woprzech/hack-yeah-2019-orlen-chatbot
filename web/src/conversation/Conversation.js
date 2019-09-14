@@ -26,12 +26,20 @@ class Conversation extends Component {
                     text: "asd asd asd asd a! asd asd ",
                     actor: ACTOR_BOT,
                     buttons: [
-                        {value: "Multisport", link: "wp.pl"},
-                        {value: "Ok system", link: "wp.pl"},
-                        {value: "Be Active", link: "wp.pl"}
+                        {text: "Multisport", redirectUrl: "wp.pl", type: "LINK"},
+                        {text: "Ok system", redirectUrl: "wp.pl", type: "LINK"},
+                        {text: "Be Active", redirectUrl: "wp.pl", type: "LINK"}
                     ]
                 },
                 {name: WORKER_NAME, text: "asd asd asd", actor: ACTOR_MAN},
+                {
+                    name: BOT_NAME,
+                    text: "Nie mam pojęcia mordo, dźwoń! ",
+                    actor: ACTOR_BOT,
+                    buttons: [
+                        {text: "", redirectUrl: "wp.pl", type: "CALL"},
+                    ]
+                }
             ]
         }
     }
@@ -70,7 +78,6 @@ class Conversation extends Component {
     render() {
         return (
             <>
-
                 <MyHeader/>
                 <Container className="app-container">
                     <Segment.Group className="app-segments">

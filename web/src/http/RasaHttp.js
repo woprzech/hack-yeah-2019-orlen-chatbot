@@ -6,7 +6,7 @@ export default class RasaHttp {
     sender = uuid.v1();
 
     ask = text => {
-        return axios.post('http://88a8e5b8.ngrok.io/webhooks/rest/webhook', {
+        return axios.post('http://175c7689.ngrok.io/webhooks/rest/webhook', {
             message: text,
             sender: this.sender
         })

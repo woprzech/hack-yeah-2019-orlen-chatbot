@@ -22,7 +22,7 @@
     border-radius: 1.285714rem !important;
 }
 
-.ui.input>input {
+.ui.input > input {
     border-left: none !important;
     border-top: none !important;
     border-right: none !important;
@@ -40,4 +40,16 @@
 
 .ui.negative.message .header {
     color: white !important;
+}
+
+.ui.divider:not(.vertical):not(.horizontal) {
+    border-bottom: none !important;
+}
+
+.ui.divider {
+    margin: 0.4rem 0 !important;
+}
+
+.ui.input.focus > input, .ui.input > input:focus {
+    border-color: #ca1f05 !important;
 }

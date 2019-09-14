@@ -6,3 +6,11 @@
 .main {
     padding: 2px;
 }
+
+.rightText {
+    text-align: right;
+}
+
+.singleMessage .ui.divider:not(.vertical):not(.horizontal) {
+    border-top: 1px solid rgba(255, 255, 255, 0.46) !important;
+}
