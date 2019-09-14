@@ -26,9 +26,9 @@ class Conversation extends Component {
                     text: "asd asd asd asd a! asd asd ",
                     actor: ACTOR_BOT,
                     buttons: [
-                        {text: "Multisport", redirectUrl: "wp.pl", type: "LINK"},
-                        {text: "Ok system", redirectUrl: "wp.pl", type: "LINK"},
-                        {text: "Be Active", redirectUrl: "wp.pl", type: "LINK"}
+                        {text: "Multisport", redirectUrl: "https://kartamultisport.pl/", type: "LINK"},
+                        {text: "Ok system", redirectUrl: "https://oksystem.pl/", type: "LINK"},
+                        {text: "Be Active", redirectUrl: "https://ebeactive.pl/", type: "LINK"}
                     ]
                 },
                 {name: WORKER_NAME, text: "asd asd asd", actor: ACTOR_MAN},
@@ -37,7 +37,7 @@ class Conversation extends Component {
                     text: "Nie mam pojęcia mordo, dźwoń! ",
                     actor: ACTOR_BOT,
                     buttons: [
-                        {text: "", redirectUrl: "wp.pl", type: "CALL"},
+                        {text: "", redirectUrl: "http://wp.pl/", type: "CALL"},
                     ]
                 }
             ]

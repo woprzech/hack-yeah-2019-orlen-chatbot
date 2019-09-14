@@ -18,13 +18,20 @@ function ButtonedMessage({name, actor, text, buttons}) {
                 <Message.Content style={{fontSize: '1.2em'}}>{text}</Message.Content>
                 <div style={{marginTop: '1.0em'}}> {buttons.map(({text, redirectUrl, type}) => {
                     if (type === MESSAGE_BUTTON_TYPE) {
-                        return <Button key={uuid.v1()} content={text} onClick={console.log(redirectUrl)}/>
+                        return <Button key={uuid.v1()}
+                                       content={text}
+                                       onClick={console.log(redirectUrl)}/>
                     }
                     if (type === LINK_BUTTON_TYPE) {
-                        return <Button key={uuid.v1()} content={text} onClick={console.log(redirectUrl)}/>
+                        return <Button key={uuid.v1()}
+                                       content={text}
+                                       onClick={() => window.open(redirectUrl, "_blank")}/>
                     }
                     if (type === CALL_BUTTON_TYPE) {
-                        return <Button content='Call to consultant' icon='call' labelPosition='left'/>
+                        return <Button content='Call to consultant'
+                                       icon='call'
+                                       labelPosition='left'
+                                       onClic={console.log("calling ...")}/>
                     }
                 })}</div>
             </Message>

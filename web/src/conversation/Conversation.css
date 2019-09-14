@@ -16,6 +16,10 @@
     justify-content: space-between;
 }
 
+.ui.segments {
+    border: none !important;
+}
+
 .ui.button, .ui.button:hover {
     background-color: #ca1f05 !important;
     color: white !important;
