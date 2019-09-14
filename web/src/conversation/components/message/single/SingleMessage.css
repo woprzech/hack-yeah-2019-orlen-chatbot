@@ -1,0 +1,8 @@
+.manMessage {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main {
+    padding: 2px;
+}

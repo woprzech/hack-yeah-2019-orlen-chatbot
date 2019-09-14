@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Input} from "semantic-ui-react";
+import {Button, Icon, Input} from "semantic-ui-react";
 import "./InputControl.css"
 
 class InputControl extends Component {
@@ -31,10 +31,14 @@ class InputControl extends Component {
             <div>
                 <Input focus
                        action={
-                           <Button content='Ask!'
+                           <Button animated
                                    onClick={this.sendMessage}
-                                   disabled={this.state.text === ""}/>
-                       }
+                                   disabled={this.state.text === ""}>
+                               <Button.Content visible>Ask!</Button.Content>
+                               <Button.Content hidden>
+                                   <Icon name='arrow right'/>
+                               </Button.Content>
+                           </Button>}
                        onKeyDown={this.handleKeyDown}
                        placeholder='Any question ?'
                        onChange={this.handleMessage}

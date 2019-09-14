@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import {Container, Segment} from "semantic-ui-react";
-import MyMessage from "./components/MyMessage";
 import MyHeader from "./components/MyHeader"
 import InputControl from "./components/messagecontrol/InputControl";
 import uuid from "uuid"
 import RasaHttp from "../http/RasaHttp"
+import ButtonedMessage from "./components/message/buttoned/ButtonedMessage";
+import SingleMessage from "./components/message/single/SingleMessage";
 
 export const WORKER_NAME = "Patryk Super Pracownik";
 export const ACTOR_BOT = "BOT";
@@ -19,7 +20,16 @@ class Conversation extends Component {
         this.state = {
             messages: [
                 {name: WORKER_NAME, text: "a asd asd asd asdasdasd asd asd ", actor: ACTOR_MAN},
-                {name: BOT_NAME, text: "asd asd asd asd a! asd asd  :", actor: ACTOR_BOT},
+                {
+                    name: BOT_NAME,
+                    text: "asd asd asd asd a! asd asd ",
+                    actor: ACTOR_BOT,
+                    buttons: [
+                        {value: "Multisport", link: "wp.pl"},
+                        {value: "Ok system", link: "wp.pl"},
+                        {value: "Be Active", link: "wp.pl"}
+                    ]
+                },
                 {name: WORKER_NAME, text: "asd asd asd", actor: ACTOR_MAN},
             ]
         }
@@ -30,12 +40,20 @@ class Conversation extends Component {
     }
 
     renderMessage(message) {
-        return (
-            <MyMessage key={uuid.v1()}
-                       text={message.text}
-                       actor={message.actor}
-                       name={message.name}/>
+        return (<div key={uuid.v1()}>{!message.buttons ?
+                <SingleMessage key={uuid.v1()}
+                               text={message.text}
+                               actor={message.actor}
+                               name={message.name}/> :
+                <ButtonedMessage key={uuid.v1()}
+                                 text={message.text}
+                                 actor={message.actor}
+                                 name={message.name}
+                                 buttons={message.buttons}/>
+
+            }</div>
         );
+
     }
 
     handleResponse = data => {
