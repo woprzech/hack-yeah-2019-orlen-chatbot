@@ -1,0 +1,12 @@
+
+.welcomeButton .ui.button {
+    background-color: white!important;
+    margin-top: 15.0em;
+    /*border-radius: 1.285714rem !important;*/
+    border: 1px solid black !important;
+}
+
+.welcomeButton .ui.button:hover {
+    margin-top: 15.0em;
+    border: 1px solid #e10010 !important
+}

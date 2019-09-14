@@ -109,7 +109,6 @@ class Conversation extends Component {
     render() {
         return (
             <>
-                <MyHeader/>
                 <Container className="app-container">
                     <Segment.Group className="app-segments">
                         <Segment
