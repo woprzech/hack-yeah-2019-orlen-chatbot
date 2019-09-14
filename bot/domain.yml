@@ -32,16 +32,28 @@ templates:
   - text: "Cześć! Pytaj, a ja odpowiem :)"
 
   utter_how_to_get_funding_for_kids_vacation:
-  - text: "Aby otrzymać dofinansowanie należy wystawić wniosek w systemie WorkFlow."
-#    buttons : ["nie wiem", "nie wiem 1"]
+  - custom:
+    - text: "Aby otrzymać dofinansowanie należy wystawić wniosek w systemie WorkFlow."
+      buttons:
+        - text: "Przejdź do strony"
+          type: "LINK"
+          redirectUrl: "https://www.kartamultisport.pl"
 
   utter_what_types_of_social_benefits_are_available:
-  - text: "Poniżej przedstawiam rodzaje świadczeń socjalnych:
-           Dofinansowanie do wypoczynku pracownika,
-           Dofinansowanie do opieki nad dzieckiem,
-           Dofinansowanie do wypoczynku dzieci i młodzieży.
-           Szczegółowe informacje znajdziesz Regulaminie Świadczeń Socjalnych znajdującycm się w Intranecie.
-"
+  - custom:
+    - text: "Poniżej przedstawiam rodzaje świadczeń socjalnych:
+             Szczegółowe informacje znajdziesz Regulaminie Świadczeń Socjalnych znajdującycm się w Intranecie."
+      buttons:
+        - text: "Wypoczynek pracownika"
+          type: "LINK"
+          redirectUrl: "https://www.kartamultisport.pl"
+        - text: "Opieka nad dzieckiem"
+          type: "LINK"
+          redirectUrl: "https://www.ebeactive.pl"
+        - text: "Wypoczynek dzieci i młodzieży"
+          type: "LINK"
+          redirectUrl: "https://oksystem.pl"
+
 
   utter_how_much_funding_will_i_get_for_kids_vacation:
   - text: "Poniżej przedstawiam kwoty dofinansowania do wypoczynku dzieci w zależności od progu dochodu na członka rodziny: Próg                        Kwota dofinansowania do 1000                300 1001-2000           200 pow. 2000           100 Szczegółowe informacje znajdziesz Regulaminie Świadczeń Socjalnych znajdującycm się w Intranecie."
@@ -56,28 +68,44 @@ templates:
 #              - text:
 
   utter_what_types_of_benefits_are_available:
-  - text: "Szczegółową informację o rodzajach benefitów znajdziesz w Intranecie."
+  - custom:
+    - text: "Szczegółową informację o rodzajach benefitów znajdziesz w Intranecie."
+      buttons:
+        - text: "Przejdź do strony"
+          type: "LINK"
+          redirectUrl: "https://www.kartamultisport.pl"
 
   utter_what_sport_programs_are_available:
   - custom:
       - text: "Pracodawca oferuje możliwosć skorzystania z oferty trzech operatorów sportowych. Poniższej linki do szczegółowej oferty:"
         buttons:
           - text: "Multisport"
+            type: "LINK"
             redirectUrl: "https://www.kartamultisport.pl"
           - text: "BeActive"
+            type: "LINK"
             redirectUrl: "https://www.ebeactive.pl"
           - text: "OK System"
+            type: "LINK"
             redirectUrl: "https://oksystem.pl"
 
   utter_how_can_i_change_my_personal_data:
-  - text: "Zgłoszenie zmiany danych osobowych odbywa się poprzez wystawienie wniosku w systemie WorkFlow."
+  - custom:
+    - text: "Zgłoszenie zmiany danych osobowych odbywa się poprzez wystawienie wniosku w systemie WorkFlow."
+      buttons:
+        - text: "Przejdź do strony"
+          type: "LINK"
+          redirectUrl: "https://www.kartamultisport.pl"
 
   utter_thanks:
   - text: "Nie ma za co :) Czy masz jeszcze jakieś pytania do mnie?"
 
   utter_action_default_fallback:
-  - text: "Niestety nie zrozumiałam :( "
-
+  - custom:
+    - text: "Niestety nie zrozumiałam :( "
+      buttons:
+        - text: "Zadzwoń do konsultanta"
+          type: "CALL"
 #    image: "https://i.imgur.com/nGF1K8f.jpg"
 #
 #  utter_did_that_help:
