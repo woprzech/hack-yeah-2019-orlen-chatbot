@@ -1,14 +1,15 @@
 import React from "react";
-import {Container, Image, Menu} from "semantic-ui-react";
-import Logo from "../../logo_orlen.jpg"
+import {Container, Image} from "semantic-ui-react";
+import WiliamsLogo from "../../wiliams_logo.png"
+import OrlenLogo from "../../orlen_logo.png"
 
 function MyHeader() {
     return (
         <div>
-            <Container>
-                {/*<Menu.Menu position='right'>*/}
-                    <Image size='tiny' src={Logo} style={{marginRight: '1.5em'}}/>
-                {/*</Menu.Menu>*/}
+            <Container style={{paddingTop: '1.5em'}}>
+                <Image verticalAlign='middle' floated='left' size='big' src={OrlenLogo} style={{marginRight: '1.5em'}}/>
+                <Image verticalAlign='middle' floated='right' size='medium' src={WiliamsLogo}
+                       style={{marginRight: '1.5em'}}/>
             </Container>
         </div>
     );
