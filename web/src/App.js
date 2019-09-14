@@ -1,5 +1,6 @@
 import React from 'react';
 import Conversation from "./conversation/Conversation";
+import './App.css';
 
 function App() {
   return (

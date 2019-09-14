@@ -3,6 +3,7 @@ import {Container, Segment} from "semantic-ui-react";
 import MyHeader from "./components/MyHeader"
 import InputControl from "./components/messagecontrol/InputControl";
 import uuid from "uuid"
+import './Conversation.css';
 import RasaHttp from "../http/RasaHttp"
 import ButtonedMessage from "./components/message/buttoned/ButtonedMessage";
 import SingleMessage from "./components/message/single/SingleMessage";
@@ -68,13 +69,14 @@ class Conversation extends Component {
 
     render() {
         return (
-            <div>
+            <>
 
                 <MyHeader/>
-                <Container>
-                    <Segment.Group>
+                <Container className="app-container">
+                    <Segment.Group className="app-segments">
                         <Segment
-                            className="conversation">{this.state.messages.map(message => this.renderMessage(message))}
+                            className="conversation">
+                            <div>{this.state.messages.map(message => this.renderMessage(message))}</div>
                         </Segment>
 
                         <Segment textAlign='right'>
@@ -95,7 +97,7 @@ class Conversation extends Component {
                     </Segment.Group>
 
                 </Container>
-            </div>
+            </>
         );
     }
 }

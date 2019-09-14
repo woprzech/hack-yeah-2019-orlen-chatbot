@@ -1,3 +1,43 @@
 .conversation {
+    /*display: flex;*/
     display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.app-container {
+    flex-grow: 1;
+}
+
+.app-segments {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ui.button, .ui.button:hover {
+    background-color: #ca1f05 !important;
+    color: white !important;
+    border-radius: 1.285714rem !important;
+}
+
+.ui.input>input {
+    border-left: none !important;
+    border-top: none !important;
+    border-right: none !important;
+    border-radius: 0 !important;
+}
+
+.ui.message {
+    border-radius: 1.285714rem !important;
+}
+
+.ui.negative.message {
+    background-color: #ca1f05 !important;
+    color: white !important;
+}
+
+.ui.negative.message .header {
+    color: white !important;
 }
