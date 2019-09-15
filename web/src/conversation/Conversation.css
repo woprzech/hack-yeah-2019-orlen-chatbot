@@ -20,10 +20,14 @@
     border: none !important;
 }
 
-.ui.button, .ui.button:hover {
+.ui.button {
     background-color: #ca1f05 !important;
     color: white !important;
     border-radius: 1.285714rem !important;
+}
+
+.ui.button:hover {
+    background-color: #ca1f05d6 !important;
 }
 
 .ui.input > input {

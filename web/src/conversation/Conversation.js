@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Container, Segment} from "semantic-ui-react";
-import MyHeader from "./components/MyHeader"
 import InputControl from "./components/messagecontrol/InputControl";
 import uuid from "uuid"
 import './Conversation.css';
@@ -55,29 +54,29 @@ class Conversation extends Component {
     renderMessage(message) {
         console.log(message);
         return (<div key={uuid.v1()}>{
-            !message.buttons ?
-                <SingleMessage key={uuid.v1()}
-                               text={message.text}
-                               actor={message.actor}
-                               name={message.name}/> :
-                <ButtonedMessage key={uuid.v1()}
-                                 text={message.text}
-                                 actor={message.actor}
-                                 name={message.name}
-                                 buttons={message.buttons}
-                                 onRedirectButtonClick={(text, url, type) => {
-                                     if (type === LINK_BUTTON_TYPE) {
-                                         window.open(url, "_blank")
+                !message.buttons ?
+                    <SingleMessage key={uuid.v1()}
+                                   text={message.text}
+                                   actor={message.actor}
+                                   name={message.name}/> :
+                    <ButtonedMessage key={uuid.v1()}
+                                     text={message.text}
+                                     actor={message.actor}
+                                     name={message.name}
+                                     buttons={message.buttons}
+                                     onRedirectButtonClick={(text, url, type) => {
+                                         if (type === LINK_BUTTON_TYPE) {
+                                             window.open(url, "_blank")
+                                         }
+                                         if (type === CALL_BUTTON_TYPE) {
+                                             window.open('tel:900300400')
+                                         }
+                                         if (type === MESSAGE_BUTTON_TYPE) {
+                                             this.renderMessage(text);
+                                             console.log("Asking about ", text)
+                                         }
                                      }
-                                     if (type === CALL_BUTTON_TYPE) {
-                                         console.log(CALL_BUTTON_TYPE)
-                                     }
-                                     if (type === MESSAGE_BUTTON_TYPE) {
-                                         this.renderMessage(text);
-                                         console.log("Asking about ", text)
-                                     }
-                                 }
-                                 }/>
+                                     }/>
 
             }</div>
         );
