@@ -25,6 +25,12 @@
 - jakie programy sportowe są dostępne?
 - programy sportowe
 
+## intent:how_many_days_of_vacation_left
+- ile zostało mi urlopu?
+- ile dni urlopu mi zostało?
+- ile mam jeszcze urlopu?
+- urlop
+
 ## intent:how_can_i_change_my_personal_data
 - jak mogę zmienić swoje dane osobowe?
 - jak mam zgłosić zmianę danych osobowych?
@@ -50,9 +56,10 @@
 - correct
 
 ## intent:deny
-- no
-- never
-- I don't think so
-- don't like that
-- no way
-- not really
+- to wszystko
+- dziękuję
+- nie
+- już w niczym
+- w niczym
+- w niczym dziękuję
+- już nie cię dziękuję

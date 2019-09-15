@@ -1,0 +1,26 @@
+{
+  "name": "voicebot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsc",
+    "start": "rm -rf dist && npm run compile && node dist/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wojtek Przechodzeń <wprzecho@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/express": "^4.17.1",
+    "@types/node": "^12.7.5",
+    "@types/twilio": "0.0.10",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "twilio": "^3.34.0"
+  }
+}
