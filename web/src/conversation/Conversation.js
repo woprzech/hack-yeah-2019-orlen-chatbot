@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Segment} from "semantic-ui-react";
+import {Container, Message, Segment} from "semantic-ui-react";
 import InputControl from "./components/messagecontrol/InputControl";
 import uuid from "uuid"
 import './Conversation.css';
@@ -15,6 +15,7 @@ export const WORKER_NAME = "Robert Kubica";
 export const ACTOR_BOT = "BOT";
 export const ACTOR_MAN = "MAN";
 export const BOT_NAME = "Bot Orlen HR";
+export const WELCOME_WORD = "Cześć";
 
 class Conversation extends Component {
 
@@ -22,51 +23,54 @@ class Conversation extends Component {
         super(props);
         this.rasa = new RasaHttp();
         this.state = {
+            isError: false,
+            error: null,
             messages: [
-                {name: WORKER_NAME, text: "a asd asd asd asdasdasd asd asd ", actor: ACTOR_MAN},
-                {
-                    name: BOT_NAME,
-                    text: "asd asd asd asd a! asd asd ",
-                    actor: ACTOR_BOT,
-                    buttons: [
-                        {text: "Multisport", redirectUrl: "https://kartamultisport.pl/", type: "LINK"},
-                        {text: "Ok system", redirectUrl: "https://oksystem.pl/", type: "LINK"},
-                        {text: "Be Active", redirectUrl: "https://ebeactive.pl/", type: "LINK"}
-                    ]
-                },
-                {name: WORKER_NAME, text: "asd asd asd", actor: ACTOR_MAN},
-                {
-                    name: BOT_NAME,
-                    text: "Nie mam pojęcia mordo, dźwoń! ",
-                    actor: ACTOR_BOT,
-                    buttons: [
-                        {text: "Zadzwoń!", redirectUrl: "http://wp.pl/", type: "CALL"},
-                    ]
-                },
-                {
-                    name: BOT_NAME,
-                    text: "Nie mam pojęcia mordo, dźwoń! ",
-                    actor: ACTOR_BOT,
-                    buttons: [
-                        {text: "Cześć", redirectUrl: "http://wp.pl/", type: "MESSAGE"},
-                    ]
-                },
-                {
-                    name: BOT_NAME,
-                    text: "Poniżej przedstawiam kwoty dofinansowania do wypoczynku dzieci w zależności od progu dochodu na członka rodziny:",
-                    actor: ACTOR_BOT,
-                    table: [{
-                        columns: ["Próg", "Kwota dofinansowania"],
-                        rows: [["do 1000", "300"], ["1001 - 2000", "200"]]
-                    }
-                    ]
-                }
+                // {name: WORKER_NAME, text: "a asd asd asd asdasdasd asd asd ", actor: ACTOR_MAN},
+                // {
+                //     name: BOT_NAME,
+                //     text: "asd asd asd asd a! asd asd ",
+                //     actor: ACTOR_BOT,
+                //     buttons: [
+                //         {text: "Multisport", redirectUrl: "https://kartamultisport.pl/", type: "LINK"},
+                //         {text: "Ok system", redirectUrl: "https://oksystem.pl/", type: "LINK"},
+                //         {text: "Be Active", redirectUrl: "https://ebeactive.pl/", type: "LINK"}
+                //     ]
+                // },
+                // {name: WORKER_NAME, text: "asd asd asd", actor: ACTOR_MAN},
+                // {
+                //     name: BOT_NAME,
+                //     text: "Nie mam pojęcia mordo, dźwoń! ",
+                //     actor: ACTOR_BOT,
+                //     buttons: [
+                //         {text: "Zadzwoń!", redirectUrl: "http://wp.pl/", type: "CALL"},
+                //     ]
+                // },
+                // {
+                //     name: BOT_NAME,
+                //     text: "Nie mam pojęcia mordo, dźwoń! ",
+                //     actor: ACTOR_BOT,
+                //     buttons: [
+                //         {text: "Cześć", redirectUrl: "http://wp.pl/", type: "MESSAGE"},
+                //     ]
+                // },
+                // {
+                //     name: BOT_NAME,
+                //     text: "Poniżej przedstawiam kwoty dofinansowania do wypoczynku dzieci w zależności od progu dochodu na członka rodziny:",
+                //     actor: ACTOR_BOT,
+                //     table: [{
+                //         columns: ["Próg", "Kwota dofinansowania"],
+                //         rows: [["do 1000", "300"], ["1001 - 2000", "200"]]
+                //     }
+                //     ]
+                // }
             ]
         }
     }
 
     componentDidMount() {
         this.setState({generatedUserId: uuid.v1()});
+        this.renderAndAsk(WELCOME_WORD)
     }
 
     renderMessage(message) {
@@ -92,10 +96,8 @@ class Conversation extends Component {
                                          }
                                          if (type === MESSAGE_BUTTON_TYPE) {
                                              this.renderAndAsk(text);
-                                             console.log("Asking about ", text)
                                          }
-                                     }
-                                     }/>
+                                     }}/>
 
             }</div>
         );
@@ -110,7 +112,9 @@ class Conversation extends Component {
             }]
         });
 
-        this.rasa.ask(message).then(data => this.handleResponse(data));
+        this.rasa.ask(message)
+            .then(data => this.handleResponse(data))
+            .catch(error => this.handleError(error));
     };
 
     handleResponse = data => {
@@ -134,6 +138,11 @@ class Conversation extends Component {
                             {this.state.messages.map(message => this.renderMessage(message))}
                         </Segment>
 
+                        <Segment>
+                            {this.state.isError ?
+                                <Message size='big' error icon='bug' header='Error occurred' content={this.state.error}/> : null}
+                        </Segment>
+
                         <Segment textAlign='right'>
                             <InputControl onButtonClick={(message) => this.renderAndAsk(message)}/>
                         </Segment>
@@ -142,6 +151,10 @@ class Conversation extends Component {
                 </Container>
             </>
         );
+    }
+
+    handleError = error => {
+        this.setState({isError: true, error: error})
     }
 }
 
