@@ -40,7 +40,7 @@ app.post('/api/receive', async (req, res) => {
 
 app.post('/api/text', async (req, res) => {
     console.log('powiedziałeś: ', req.body.SpeechResult);
-    const nextStep = await axios.post("http://175c7689.ngrok.io/webhooks/rest/webhook", {
+    const nextStep = await axios.post("http://5bece169.ngrok.io/webhooks/rest/webhook", {
         message: req.body.SpeechResult,
         sender: req.body.CallSid
     });

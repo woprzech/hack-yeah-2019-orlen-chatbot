@@ -1,19 +1,113 @@
 intents:
-  - greet
-  - how_to_get_funding_for_kids_vacation
-  - how_much_funding_will_i_get_for_kids_vacation
-  - what_types_of_benefits_are_available
-  - how_can_i_change_my_personal_data
-  - what_sport_programs_are_available
-  - how_many_days_of_vacation_left
-  - what_types_of_social_benefits_are_available
-  - goodbye
-  - thanks
-  - affirm
-  - deny
-#  - mood_great
-#  - mood_unhappy
-
+- greet
+- how_to_get_funding_for_kids_vacation
+- how_much_funding_will_i_get_for_kids_vacation
+- what_types_of_benefits_are_available
+- how_can_i_change_my_personal_data
+- what_sport_programs_are_available
+- how_many_days_of_vacation_left
+- what_types_of_social_benefits_are_available
+- goodbye
+- thanks
+- affirm
+- deny
+templates:
+  utter_greet:
+  - custom:
+    - text: Cześć, teraz możesz zadać mi pytanie!
+  utter_how_to_get_funding_for_kids_vacation:
+  - custom:
+    - text: Aby otrzymać dofinansowanie należy wystawić wniosek w systemie WorkFlow.
+      audio: https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/dofinansowanie.mp3
+      buttons:
+      - text: Przejdź do strony
+        type: LINK
+        redirectUrl: https://www.kartamultisport.pl
+  utter_what_types_of_social_benefits_are_available:
+  - custom:
+    - text: 'Poniżej przedstawiam rodzaje świadczeń socjalnych: Szczegółowe informacje
+        znajdziesz Regulaminie Świadczeń Socjalnych znajdującycm się w Intranecie.'
+      audio: https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/dofinansowanie_wypoczynek.mp3
+      buttons:
+      - text: Wypoczynek pracownika
+        type: LINK
+        redirectUrl: https://gratka.pl/regiopraca/portal/sites/regiopraca.pl/files/imagecache/755x/images/regiopracapl/13/urlop-wypoczynek.jpg?lk95yp
+      - text: Opieka nad dzieckiem
+        type: LINK
+        redirectUrl: https://i.iplsc.com/dni-opieki-nad-dzieckiem-sa-zagwarantowane-ustawowo/00040L7ZYQSTO111-C122-F4.jpg
+      - text: Wypoczynek dzieci i młodzieży
+        type: LINK
+        redirectUrl: https://g5.gazetaprawna.pl/p/_wspolne/pliki/2981000/2981182-dzieci-na-wakacjach-657-323.jpg
+  utter_how_much_funding_will_i_get_for_kids_vacation:
+  - custom:
+    - text: 'Poniżej przedstawiam kwoty dofinansowania do wypoczynku dzieci w zależności
+        od progu dochodu na członka rodziny:'
+      table:
+      - columns:
+        - Próg
+        - Kwota dofinansowania
+        rows:
+        - - do 1000
+          - '300'
+        - - 1001 - 2000
+          - '200'
+        - - pow. 2000
+          - '100'
+  utter_what_types_of_benefits_are_available:
+  - custom:
+    - text: Szczegółową informację o rodzajach benefitów znajdziesz w Intranecie.
+      audio: https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/benefity.mp3
+      buttons:
+      - text: Przejdź do strony
+        type: LINK
+        redirectUrl: https://www.kartamultisport.pl
+  utter_what_sport_programs_are_available:
+  - custom:
+    - text: 'Pracodawca oferuje możliwosć skorzystania z oferty trzech operatorów
+        sportowych. Poniższej linki do szczegółowej oferty:'
+      audio: https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/operatorzy_sportowi.mp3
+      buttons:
+      - text: Multisport
+        type: LINK
+        redirectUrl: https://www.kartamultisport.pl
+      - text: BeActive
+        type: LINK
+        redirectUrl: https://www.ebeactive.pl
+      - text: OK System
+        type: LINK
+        redirectUrl: https://oksystem.pl
+  utter_how_can_i_change_my_personal_data:
+  - custom:
+    - text: Zgłoszenie zmiany danych osobowych odbywa się poprzez wystawienie wniosku
+        w systemie WorkFlow.
+      audio: https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/zmiana_danych_osobowych.mp3
+      buttons:
+      - text: Przejdź do strony
+        type: LINK
+        redirectUrl: https://www.kartamultisport.pl
+  utter_how_many_days_of_vacation_left:
+  - custom:
+    - text: Zostało Ci jeszcze 12 dni urlopu.
+      audio: https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/odpowiedz_urlop.mp3
+      buttons:
+      - text: Złóż wniosek urlopowy
+        type: LINK
+        redirectUrl: https://www.google.com
+  utter_thanks:
+  - custom:
+    - text: Nie ma za co :) Czy masz jeszcze jakieś pytania do mnie?
+      audio: https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/pozegnanie.mp3
+  utter_action_default_fallback:
+  - custom:
+    - text: Niestety nie zrozumiałam pytania. Zapraszam do kontaktu z konsultantem.
+      audio: https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/fallback.mp3
+      buttons:
+      - text: Zadzwoń
+        type: CALL
+  utter_goodbye:
+  - custom:
+    - text: Do usłyszenia
+      audio: https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/pozegnanie.mp3
 actions:
 - utter_greet
 - utter_how_to_get_funding_for_kids_vacation
@@ -25,114 +119,4 @@ actions:
 - utter_what_types_of_benefits_are_available
 - utter_thanks
 - utter_action_default_fallback
-#- utter_did_that_help
-#- utter_happy
 - utter_goodbye
-
-templates:
-  utter_greet:
-  - custom:
-    - text: "Cześć, teraz możesz zadać mi pytanie!"
-
-  utter_how_to_get_funding_for_kids_vacation:
-  - custom:
-    - text: "Aby otrzymać dofinansowanie należy wystawić wniosek w systemie WorkFlow."
-      audio: "https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/dofinansowanie.mp3"
-      buttons:
-        - text: "Przejdź do strony"
-          type: "LINK"
-          redirectUrl: "https://www.kartamultisport.pl"
-
-  utter_what_types_of_social_benefits_are_available:
-  - custom:
-    - text: "Poniżej przedstawiam rodzaje świadczeń socjalnych:
-             Szczegółowe informacje znajdziesz Regulaminie Świadczeń Socjalnych znajdującycm się w Intranecie."
-      audio: "https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/dofinansowanie_wypoczynek.mp3"
-      buttons:
-        - text: "Wypoczynek pracownika"
-          type: "LINK"
-          redirectUrl: "https://gratka.pl/regiopraca/portal/sites/regiopraca.pl/files/imagecache/755x/images/regiopracapl/13/urlop-wypoczynek.jpg?lk95yp"
-        - text: "Opieka nad dzieckiem"
-          type: "LINK"
-          redirectUrl: "https://i.iplsc.com/dni-opieki-nad-dzieckiem-sa-zagwarantowane-ustawowo/00040L7ZYQSTO111-C122-F4.jpg"
-        - text: "Wypoczynek dzieci i młodzieży"
-          type: "LINK"
-          redirectUrl: "https://g5.gazetaprawna.pl/p/_wspolne/pliki/2981000/2981182-dzieci-na-wakacjach-657-323.jpg"
-
-
-  utter_how_much_funding_will_i_get_for_kids_vacation:
-  - custom:
-    - text: "Poniżej przedstawiam kwoty dofinansowania do wypoczynku dzieci w zależności od progu dochodu na członka rodziny:"
-      table:
-        - columns: ["Próg", "Kwota dofinansowania"]
-          rows:
-            - ["do 1000", "300"]
-            - ["1001 - 2000", "200"]
-            - ["pow. 2000", "100"]
-
-  utter_what_types_of_benefits_are_available:
-  - custom:
-    - text: "Szczegółową informację o rodzajach benefitów znajdziesz w Intranecie."
-      audio: "https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/benefity.mp3"
-      buttons:
-        - text: "Przejdź do strony"
-          type: "LINK"
-          redirectUrl: "https://www.kartamultisport.pl"
-
-  utter_what_sport_programs_are_available:
-  - custom:
-      - text: "Pracodawca oferuje możliwosć skorzystania z oferty trzech operatorów sportowych. Poniższej linki do szczegółowej oferty:"
-        audio: "https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/operatorzy_sportowi.mp3"
-        buttons:
-          - text: "Multisport"
-            type: "LINK"
-            redirectUrl: "https://www.kartamultisport.pl"
-          - text: "BeActive"
-            type: "LINK"
-            redirectUrl: "https://www.ebeactive.pl"
-          - text: "OK System"
-            type: "LINK"
-            redirectUrl: "https://oksystem.pl"
-
-  utter_how_can_i_change_my_personal_data:
-  - custom:
-    - text: "Zgłoszenie zmiany danych osobowych odbywa się poprzez wystawienie wniosku w systemie WorkFlow."
-      audio: "https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/zmiana_danych_osobowych.mp3"
-      buttons:
-        - text: "Przejdź do strony"
-          type: "LINK"
-          redirectUrl: "https://www.kartamultisport.pl"
-
-  utter_how_many_days_of_vacation_left:
-  - custom:
-    - text: "Zostało Ci jeszcze 12 dni urlopu."
-      audio: "https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/odpowiedz_urlop.mp3"
-      buttons:
-        - text: "Złóż wniosek urlopowy"
-          type: "LINK"
-          redirectUrl: "https://www.google.com"
-
-  utter_thanks:
-  - custom:
-    - text: "Nie ma za co :) Czy masz jeszcze jakieś pytania do mnie?"
-      audio: "https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/pozegnanie.mp3"
-
-  utter_action_default_fallback:
-  - custom:
-    - text: "Niestety nie zrozumiałam pytania. Zapraszam do kontaktu z konsultantem."
-      audio: "https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/fallback.mp3"
-      buttons:
-        - text: "Zadzwoń"
-          type: "CALL"
-#    image: "https://i.imgur.com/nGF1K8f.jpg"
-#
-#  utter_did_that_help:
-#  - text: "Did that help you?"
-#
-#  utter_happy:
-#  - text: "Great carry on!"
-#
-  utter_goodbye:
-  - custom:
-    - text: "Do usłyszenia"
-      audio: "https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/pozegnanie.mp3"

@@ -138,10 +138,11 @@ class Conversation extends Component {
                             {this.state.messages.map(message => this.renderMessage(message))}
                         </Segment>
 
-                        <Segment>
-                            {this.state.isError ?
-                                <Message size='big' error icon='bug' header='Error occurred' content={this.state.error}/> : null}
-                        </Segment>
+                        {this.state.isError ?
+                            <Segment>
+                                    <Message size='big' error icon='bug' header='Error occurred' content={this.state.error}/>
+                            </Segment>
+                        : null}
 
                         <Segment textAlign='right'>
                             <InputControl onButtonClick={(message) => this.renderAndAsk(message)}/>
