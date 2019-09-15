@@ -60,12 +60,13 @@ templates:
 
   utter_how_much_funding_will_i_get_for_kids_vacation:
   - custom:
-    - text: "Poniżej przedstawiam kwoty dofinansowania do wypoczynku dzieci w zależności od progu dochodu na członka rodziny: Próg                        Kwota dofinansowania do 1000                300 1001-2000           200 pow. 2000           100 Szczegółowe informacje znajdziesz Regulaminie Świadczeń Socjalnych znajdującycm się w Intranecie."
+    - text: "Poniżej przedstawiam kwoty dofinansowania do wypoczynku dzieci w zależności od progu dochodu na członka rodziny:"
       table:
         - columns: ["Próg", "Kwota dofinansowania"]
           rows:
-            - ["do 1000", "do 1000"]
-            - ["do 1000", "do 1000"]
+            - ["do 1000", "300"]
+            - ["1001 - 2000", "200"]
+            - ["pow. 2000", "100"]
 
   utter_what_types_of_benefits_are_available:
   - custom:
