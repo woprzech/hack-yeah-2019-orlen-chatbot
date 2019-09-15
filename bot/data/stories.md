@@ -54,3 +54,8 @@
 > check_asked_question
 * deny
   - utter_goodbye
+  
+## goodbye
+> check_asked_question
+* goodbye
+  - utter_goodbye

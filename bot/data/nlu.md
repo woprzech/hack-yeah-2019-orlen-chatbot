@@ -14,6 +14,8 @@
 - ile dostanę dofinansowania do wypoczynku dzieci?
 - ile jest dofinansowania do wypoczynku dzieci?
 - jakie jest dofinansowania do wypoczynku dzieci?
+- jakie jest dofinansowanie do wypoczynku
+- dofinansowanie dziecka
 - dofinansowania do wypoczynku dzieci
 - dofinansowanie wypoczynek dzieci
 - na ile dofinansowania mogę liczyć do wypoczynku dzieci?
@@ -61,7 +63,10 @@
 ## intent:goodbye
 - żegnam
 - do widzenia
+- dowidzenia
 - do usłyszenia
+- dousłyszenia
+- douslyszenia
 - do zobaczenia
 
 ## intent:thanks
