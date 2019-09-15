@@ -39,7 +39,18 @@
   - utter_what_sport_programs_are_available
 > check_asked_question
 
+## happy path - how_many_days_of_vacation_left
+> check_asked_question
+* how_many_days_of_vacation_left
+  - utter_how_many_days_of_vacation_left
+> check_asked_question
+
 ## thanks
 > check_asked_question
 * thanks
   - utter_thanks
+  
+## deny
+> check_asked_question
+* deny
+  - utter_goodbye
