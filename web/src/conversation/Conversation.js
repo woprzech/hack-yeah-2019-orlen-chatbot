@@ -42,6 +42,14 @@ class Conversation extends Component {
                     buttons: [
                         {text: "Zadzwoń!", redirectUrl: "http://wp.pl/", type: "CALL"},
                     ]
+                },
+                {
+                    name: BOT_NAME,
+                    text: "Nie mam pojęcia mordo, dźwoń! ",
+                    actor: ACTOR_BOT,
+                    buttons: [
+                        {text: "Cześć", redirectUrl: "http://wp.pl/", type: "MESSAGE"},
+                    ]
                 }
             ]
         }
@@ -72,7 +80,7 @@ class Conversation extends Component {
                                              window.open('tel:900300400')
                                          }
                                          if (type === MESSAGE_BUTTON_TYPE) {
-                                             this.renderMessage(text);
+                                             this.renderAndAsk(text);
                                              console.log("Asking about ", text)
                                          }
                                      }
@@ -110,9 +118,8 @@ class Conversation extends Component {
             <>
                 <Container className="app-container">
                     <Segment.Group className="app-segments">
-                        <Segment
-                            className="conversation">
-                            <div>{this.state.messages.map(message => this.renderMessage(message))}</div>
+                        <Segment className="conversation">
+                            {this.state.messages.map(message => this.renderMessage(message))}
                         </Segment>
 
                         <Segment textAlign='right'>
@@ -120,7 +127,6 @@ class Conversation extends Component {
                         </Segment>
 
                     </Segment.Group>
-
                 </Container>
             </>
         );
