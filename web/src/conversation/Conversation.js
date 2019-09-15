@@ -50,6 +50,16 @@ class Conversation extends Component {
                     buttons: [
                         {text: "Cześć", redirectUrl: "http://wp.pl/", type: "MESSAGE"},
                     ]
+                },
+                {
+                    name: BOT_NAME,
+                    text: "Poniżej przedstawiam kwoty dofinansowania do wypoczynku dzieci w zależności od progu dochodu na członka rodziny:",
+                    actor: ACTOR_BOT,
+                    table: [{
+                        columns: ["Próg", "Kwota dofinansowania"],
+                        rows: [["do 1000", "300"], ["1001 - 2000", "200"]]
+                    }
+                    ]
                 }
             ]
         }
@@ -66,7 +76,8 @@ class Conversation extends Component {
                     <SingleMessage key={uuid.v1()}
                                    text={message.text}
                                    actor={message.actor}
-                                   name={message.name}/> :
+                                   name={message.name}
+                                   table={message.table}/> :
                     <ButtonedMessage key={uuid.v1()}
                                      text={message.text}
                                      actor={message.actor}
@@ -108,7 +119,8 @@ class Conversation extends Component {
                 text: it.text,
                 actor: ACTOR_BOT,
                 name: BOT_NAME,
-                buttons: it.buttons
+                buttons: it.buttons,
+                table: it.table
             }))]
         })
     };

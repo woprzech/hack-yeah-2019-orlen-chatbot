@@ -1,0 +1,25 @@
+{
+  "custom": [
+    {
+      "table": [
+        {
+          "columns": [
+            "Próg",
+            "Kwota dofinansowania"
+          ],
+          "rows": [
+            [
+              "do 1000",
+              "300"
+            ],
+            [
+              "1001 - 2000",
+              "200"
+            ]
+          ]
+        }
+      ],
+      "text": "Poniżej przedstawiam kwoty dofinansowania do wypoczynku dzieci w zależności od progu dochodu na członka rodziny:"
+    }
+  ]
+}
