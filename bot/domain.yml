@@ -37,6 +37,7 @@ templates:
   utter_how_to_get_funding_for_kids_vacation:
   - custom:
     - text: "Aby otrzymać dofinansowanie należy wystawić wniosek w systemie WorkFlow."
+      audio: "https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/dofinansowanie.mp3"
       buttons:
         - text: "Przejdź do strony"
           type: "LINK"
@@ -46,6 +47,7 @@ templates:
   - custom:
     - text: "Poniżej przedstawiam rodzaje świadczeń socjalnych:
              Szczegółowe informacje znajdziesz Regulaminie Świadczeń Socjalnych znajdującycm się w Intranecie."
+      audio: "https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/dofinansowanie_wypoczynek.mp3"
       buttons:
         - text: "Wypoczynek pracownika"
           type: "LINK"
@@ -71,6 +73,7 @@ templates:
   utter_what_types_of_benefits_are_available:
   - custom:
     - text: "Szczegółową informację o rodzajach benefitów znajdziesz w Intranecie."
+      audio: "https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/benefity.mp3"
       buttons:
         - text: "Przejdź do strony"
           type: "LINK"
@@ -79,6 +82,7 @@ templates:
   utter_what_sport_programs_are_available:
   - custom:
       - text: "Pracodawca oferuje możliwosć skorzystania z oferty trzech operatorów sportowych. Poniższej linki do szczegółowej oferty:"
+        audio: "https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/operatorzy_sportowi.mp3"
         buttons:
           - text: "Multisport"
             type: "LINK"
@@ -93,6 +97,7 @@ templates:
   utter_how_can_i_change_my_personal_data:
   - custom:
     - text: "Zgłoszenie zmiany danych osobowych odbywa się poprzez wystawienie wniosku w systemie WorkFlow."
+      audio: "https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/zmiana_danych_osobowych.mp3"
       buttons:
         - text: "Przejdź do strony"
           type: "LINK"
@@ -115,6 +120,7 @@ templates:
   utter_action_default_fallback:
   - custom:
     - text: "Niestety nie zrozumiałam pytania. Zapraszam do kontaktu z konsultantem."
+      audio: "https://hackyeah-orlen.s3.eu-central-1.amazonaws.com/fallback.mp3"
       buttons:
         - text: "Zadzwoń"
           type: "CALL"
