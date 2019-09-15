@@ -49,13 +49,13 @@ templates:
       buttons:
         - text: "Wypoczynek pracownika"
           type: "LINK"
-          redirectUrl: "https://www.kartamultisport.pl"
+          redirectUrl: "https://gratka.pl/regiopraca/portal/sites/regiopraca.pl/files/imagecache/755x/images/regiopracapl/13/urlop-wypoczynek.jpg?lk95yp"
         - text: "Opieka nad dzieckiem"
           type: "LINK"
-          redirectUrl: "https://www.ebeactive.pl"
+          redirectUrl: "https://i.iplsc.com/dni-opieki-nad-dzieckiem-sa-zagwarantowane-ustawowo/00040L7ZYQSTO111-C122-F4.jpg"
         - text: "Wypoczynek dzieci i młodzieży"
           type: "LINK"
-          redirectUrl: "https://oksystem.pl"
+          redirectUrl: "https://g5.gazetaprawna.pl/p/_wspolne/pliki/2981000/2981182-dzieci-na-wakacjach-657-323.jpg"
 
 
   utter_how_much_funding_will_i_get_for_kids_vacation:
